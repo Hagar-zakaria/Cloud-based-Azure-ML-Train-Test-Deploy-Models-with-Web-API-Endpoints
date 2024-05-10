@@ -186,3 +186,66 @@ We may need to create compute instances at the time of cleaning and training pro
 13. Our pipeline is complete, we can click on the submit button to run the pipeline.
 
 ![image](https://github.com/Hagar-zakaria/Cloud-based-Azure-ML-Train-Test-Deploy-Models-with-Web-API-Endpoints/assets/93611934/458048d6-db2d-4245-a78c-5448c4606d0d)
+
+Our pipeline running is completed successfully.
+
+14. After completing, right-click on the Evaluate model to see the ROC curves.
+![image](https://github.com/Hagar-zakaria/Cloud-based-Azure-ML-Train-Test-Deploy-Models-with-Web-API-Endpoints/assets/93611934/7b27b8a9-c95d-471b-a86d-626507cd1ca8)
+
+![image](https://github.com/Hagar-zakaria/Cloud-based-Azure-ML-Train-Test-Deploy-Models-with-Web-API-Endpoints/assets/93611934/39c9387d-5ddd-4773-9a85-5066870d2348)
+
+# Creating Inference Pipeline and deploying it as a web service
+
+1.After completing the pipeline, we can get the create inference pipeline option as shown below:
+![image](https://github.com/Hagar-zakaria/Cloud-based-Azure-ML-Train-Test-Deploy-Models-with-Web-API-Endpoints/assets/93611934/adabb5e4-d031-4fd1-ad89-3827ad5c5fac)
+
+2. When we choose real-time inference, azure do some changes in the pipeline as shown below:
+![image](https://github.com/Hagar-zakaria/Cloud-based-Azure-ML-Train-Test-Deploy-Models-with-Web-API-Endpoints/assets/93611934/afc165a0-689e-413c-a1a8-4eb71a74cd20)
+
+3. We did some changes in the pipeline as shown below:
+![image](https://github.com/Hagar-zakaria/Cloud-based-Azure-ML-Train-Test-Deploy-Models-with-Web-API-Endpoints/assets/93611934/4627a968-5049-4da1-8929-92e5336085b6)
+
+4. Now click on the submit button to run the real-time inference. After completing the automation, we can check the scores.
+![image](https://github.com/Hagar-zakaria/Cloud-based-Azure-ML-Train-Test-Deploy-Models-with-Web-API-Endpoints/assets/93611934/6740fb8e-4944-4630-a2c7-11cc45cb869a)
+
+We got the scores and probabilities also.
+
+5. But we need only score labels in the web service output, so we will need a select column option in the canvas to limit the output.
+![image](https://github.com/Hagar-zakaria/Cloud-based-Azure-ML-Train-Test-Deploy-Models-with-Web-API-Endpoints/assets/93611934/2d5ef645-83e7-459d-b832-361bfca4d6a8)
+
+6. To make the predictions, we need to deploy the model in the cloud, if the deploy button is shown, then refresh the page after submitting run completion.
+
+But before deployment, we need an Azure Kubernetes Cluster service for that need to make a new inference cluster from the ML studio.
+
+![image](https://github.com/Hagar-zakaria/Cloud-based-Azure-ML-Train-Test-Deploy-Models-with-Web-API-Endpoints/assets/93611934/b0ff08ac-3eae-4341-a7ec-79d83576ab49)
+
+Choose the virtual machine configuration.
+![image](https://github.com/Hagar-zakaria/Cloud-based-Azure-ML-Train-Test-Deploy-Models-with-Web-API-Endpoints/assets/93611934/0d2138d4-e16e-4942-ab96-86a4fdef955e)
+
+Write the name of the cluster for the endpoint.
+
+![image](https://github.com/Hagar-zakaria/Cloud-based-Azure-ML-Train-Test-Deploy-Models-with-Web-API-Endpoints/assets/93611934/8e668bc8-ddd8-46ce-a90d-3feb8b891582)
+
+Now click on the create button to make the cluster, after some minutes it is completed successfully.
+
+![image](https://github.com/Hagar-zakaria/Cloud-based-Azure-ML-Train-Test-Deploy-Models-with-Web-API-Endpoints/assets/93611934/1f4b360a-d617-4751-bab9-60a2f8d41aa2)
+
+After the creation of an inference cluster, now it’s time to deploy the model and make the endpoints.
+
+![image](https://github.com/Hagar-zakaria/Cloud-based-Azure-ML-Train-Test-Deploy-Models-with-Web-API-Endpoints/assets/93611934/87fd3687-84f8-4b5a-bf03-6ca54f6d9a3e)
+
+Give the name of the endpoint and select the newly made inference cluster and click on the deploy button as shown below:
+
+![image](https://github.com/Hagar-zakaria/Cloud-based-Azure-ML-Train-Test-Deploy-Models-with-Web-API-Endpoints/assets/93611934/8a312417-b887-4296-b997-0ab5e9c8e6af)
+
+After a few minutes, the deployment is complete and in the endpoint section we will see the endpoint in a healthy state.
+
+![image](https://github.com/Hagar-zakaria/Cloud-based-Azure-ML-Train-Test-Deploy-Models-with-Web-API-Endpoints/assets/93611934/e55c44e7-e520-4713-98b4-28de346f5a85)
+
+In the test section, we can make the prediction based on the input parameters.
+
+![image](https://github.com/Hagar-zakaria/Cloud-based-Azure-ML-Train-Test-Deploy-Models-with-Web-API-Endpoints/assets/93611934/2cf5a96b-db9e-4995-8668-837366909dc5)
+
+In the consume section, we can use the URL for scores.
+
+![image](https://github.com/Hagar-zakaria/Cloud-based-Azure-ML-Train-Test-Deploy-Models-with-Web-API-Endpoints/assets/93611934/f925604b-98b4-46ab-91cc-37dd5a89fbd2)
